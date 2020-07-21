@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', ()=> {
     const wrapper = document.getElementById('wrapper'),
           input = wrapper.querySelector('.input'),
-          fieldForValue = wrapper.querySelector('.field-for-value'),
+          fieldForValue = document.querySelector('.field-for-value'),
           fragment = document.createDocumentFragment();
 
     let inputValue;

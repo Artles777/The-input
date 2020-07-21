@@ -1,3 +1,35 @@
 span {
-    display: block;
+
+}
+
+#wrapper {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.instruction {
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid #00bcd3;
+    border-radius: 10px;
+}
+
+.instruction-b {
+    font-weight: bold;
+    color: #0d47a1;
+}
+
+.field-for-value {
+    margin-top: 20px;
+    height: 1200px;
+    word-break: break-all;
+}
+
+.input {
+    border: 2px solid #82b1ff;
+    border-radius: 4px;
+}
+
+.input:focus {
+    outline: none;
 }
