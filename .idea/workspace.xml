@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6853902-f4e5-4579-9c5c-027b68c3ece0" name="Default Changelist" comment="" />
+    <list default="true" id="b6853902-f4e5-4579-9c5c-027b68c3ece0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1euK9OteN8S64rnJks5vMsrG0eo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -91,5 +95,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595257740965" />
+    <state x="369" y="75" key="RollbackChangesDialog" timestamp="1595341616207">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="369" y="75" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595341616207" />
   </component>
 </project>
