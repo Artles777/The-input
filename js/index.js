@@ -10,6 +10,9 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // Value viewport for lazy loading
     let zoomScrolling = document.scrollingElement.clientHeight;
 
+    // resulting value scroll
+    let endScroll = document.scrollingElement.clientHeight - 238;
+
     // Render DOM span-elements in the DOM tree
     const renderSpan = () => {
         input.addEventListener('input', () => {
@@ -36,7 +39,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
     const scrollDocument = () => {
         window.addEventListener('scroll', () => {
             let calc = inputValue - fieldForValue.childNodes.length;
-            if (fieldForValue.scrollHeight - document.scrollingElement.scrollTop === 153) {
+            if (fieldForValue.scrollHeight - document.scrollingElement.scrollTop === endScroll) {
                 for (let i = 0; i < calc && i < zoomScrolling; i++) {
                     addSpanElem();
                 }
