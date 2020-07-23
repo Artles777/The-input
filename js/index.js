@@ -4,58 +4,49 @@ window.addEventListener('DOMContentLoaded', ()=> {
           fieldForValue = document.querySelector('.field-for-value'),
           fragment = document.createDocumentFragment();
 
+    // Value for input element
     let inputValue;
+
+    // Value viewport for lazy loading
+    let zoomScrolling = document.scrollingElement.clientHeight;
 
     // Render DOM span-elements in the DOM tree
     const renderSpan = () => {
         input.addEventListener('input', () => {
             checkInput();
             inputValue = parseInt(input.value);
-
-            if ( inputValue === 0 || inputValue === undefined ) {
-                document.location.reload();
-            } else {
-                if (inputValue > 1000) {
-                    addSpanElemBig();
-                } else {
-                    addSpanElem();
-                }
-            }
-
-            if (fieldForValue.childNodes.length !== fragment.childNodes.length) {
-                removeSpanElem();
-            }
-            fieldForValue.appendChild(fragment);
+            for (let i = 0; i < zoomScrolling && i < inputValue; i++) addSpanElem();
+            requestAnimationFrame(lazyPushSpan);
         });
     };
 
     // Generating much span-elements
     const addSpanElem = () => {
-        for (let i = 0; i < inputValue; i++) {
-            fragment.appendChild(document.createElement('span'));
+            fragment.append(document.createElement('span'));
             eachGenerateValue();
-        }
     };
 
-    // Generating very big count span-elements
-    const addSpanElemBig = () => {
-        console.log('large value');
-        let y = parseInt(inputValue / inputValue);
-        for (let i = 0; i < inputValue; i++) {
-            console.log("номер шага =" + i);
-            setTimeout(() => {
-                for (let c = 0; c < y; c++) {
-                    fragment.appendChild(document.createElement('span'));
-                    eachGenerateValue();
+    // The only rendering
+    function lazyPushSpan() {
+        fieldForValue.append(fragment);
+        requestAnimationFrame(lazyPushSpan);
+    }
+
+    // Lazy loading
+    const scrollDocument = () => {
+        window.addEventListener('scroll', () => {
+            let calc = inputValue - fieldForValue.childNodes.length;
+            if (fieldForValue.scrollHeight - document.scrollingElement.scrollTop === 153) {
+                for (let i = 0; i < calc && i < zoomScrolling; i++) {
+                    addSpanElem();
                 }
-                console.log('Print!');
-                fieldForValue.appendChild(fragment);
-            },i * 300)
-        }
+            }
+            requestAnimationFrame(lazyPushSpan);
+        });
     };
 
     // Deleting each span-element if run re render DOM
-    const removeSpanElem = () => document.querySelectorAll('span').forEach(item => item.parentNode.removeChild(item));
+    const removeSpanElem = () => fieldForValue.childNodes.forEach(item => item.remove());
 
     // Logic operating generating random value
     const generateRandomValue = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -69,6 +60,11 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // Sets the focus on the input
     const inputFocus = () => input.focus();
 
+    // Clear span-elements inside a fragment
+    const removeSpans = () => input.onkeydown = () => { for (let i = 0; i < inputValue; i++) removeSpanElem() };
+
     inputFocus();
     renderSpan();
+    removeSpans();
+    scrollDocument();
 });

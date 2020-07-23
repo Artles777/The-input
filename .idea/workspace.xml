@@ -33,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -69,6 +70,12 @@
       <workItem from="1595280525067" duration="49000" />
       <workItem from="1595280597955" duration="3898000" />
       <workItem from="1595312430360" duration="11727000" />
+      <workItem from="1595415770196" duration="15600000" />
+      <workItem from="1595441273727" duration="841000" />
+      <workItem from="1595443387819" duration="5152000" />
+      <workItem from="1595488190496" duration="20431000" />
+      <workItem from="1595512177536" duration="222000" />
+      <workItem from="1595513523244" duration="7497000" />
     </task>
     <servers />
   </component>
@@ -80,6 +87,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1595174540476" />
+    <state x="220" y="0" key="CommitChangelistDialog2" timestamp="1595351784379">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="220" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1595351784379" />
     <state x="462" y="106" key="FileChooserDialogImpl" timestamp="1595275838549">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
