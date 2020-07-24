@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // resulting value scroll
     let endScroll = document.scrollingElement.clientHeight - 238;
 
+    const arrBtn = document.createElement('a');
+
     // Render DOM span-elements in the DOM tree
     const renderSpan = () => {
         input.addEventListener('input', () => {
@@ -48,6 +50,26 @@ window.addEventListener('DOMContentLoaded', ()=> {
         });
     };
 
+    // The Show arrow top from a value scrolling > 1000 and remove arrow top from a value < 1000
+    const showArrowTop = () => {
+        window.addEventListener('scroll', () => {
+            if (document.scrollingElement.scrollTop > 1000) {
+                addArrowTop();
+            } else if (document.scrollingElement.scrollTop < 1000) {
+                arrBtn.remove();
+                inputFocus();
+            }
+            console.log(document.scrollingElement.scrollTop)
+        });
+    };
+
+    // Adding arrow top before the field for value
+    const addArrowTop = () => {
+        arrBtn.classList.add('arrow-top');
+        arrBtn.innerText = '⇑';
+        fieldForValue.before(arrBtn);
+    };
+
     // Deleting each span-element if run re render DOM
     const removeSpanElem = () => fieldForValue.childNodes.forEach(item => item.remove());
 
@@ -66,8 +88,13 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // Clear span-elements inside a fragment
     const removeSpans = () => input.onkeydown = () => { for (let i = 0; i < inputValue; i++) removeSpanElem() };
 
+    //Back to top on a click on button
+    const backToTop = () => arrBtn.addEventListener('click', () => requestAnimationFrame(() => document.scrollingElement.scrollTop = -1))
+
     inputFocus();
     renderSpan();
     removeSpans();
     scrollDocument();
+    showArrowTop();
+    backToTop();
 });

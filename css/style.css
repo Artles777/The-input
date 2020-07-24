@@ -35,3 +35,16 @@ span {
 .input:focus {
     outline: none;
 }
+
+.arrow-top {
+    cursor: pointer;
+    font-size: 35px;
+    border: 2px solid #82b1ff;
+    color: #82b1ff;
+    padding: 5px 15px;
+    border-radius: 50%;
+    position: fixed;
+    right: 0;
+    bottom: 2rem;
+    margin-right: 2rem;
+}
