@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // resulting value scroll
     let endScroll = document.scrollingElement.clientHeight - 238;
 
+    // Create arrow top
     const arrBtn = document.createElement('a');
 
     // Render DOM span-elements in the DOM tree
